@@ -15,6 +15,10 @@ class DrW_SDL2
         virtual ~DrW_SDL2();
     protected:
     private:
+        SDL_Window* _window;
+        SDL_Renderer* _renderer;
+        TTF_Font* _font;
+        std::vector<SDL_Texture*> _textures;
 };
 
 #endif // DRW_SDL2_H
