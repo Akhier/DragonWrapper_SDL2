@@ -1,6 +1,12 @@
 #ifndef DRW_SDL2_H
 #define DRW_SDL2_H
 
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
+#include <iostream>
+#include <vector>
+#include <map>
 
 class DrW_SDL2
 {
