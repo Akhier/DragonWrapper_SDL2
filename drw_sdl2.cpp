@@ -10,6 +10,10 @@ DrW_SDL2::DrW_SDL2()
     }
 }
 
+void DrW_SDL2::_logerror(const std::string &message){
+    std::cout << message << " Error: " << SDL_GetError() << std::endl;
+}
+
 DrW_SDL2::~DrW_SDL2()
 {
     //dtor
