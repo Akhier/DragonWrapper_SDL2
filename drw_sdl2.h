@@ -12,7 +12,8 @@ class DrW_SDL2
 {
     public:
         DrW_SDL2();
-        void createWindow(const std::string windowtitle, int x = -1, int y = -1, int width, int height, bool resizable);
+        void createWindow(const std::string windowtitle, int x, int y, int width, int height, bool resizable);
+        void createWindow(const std::string windowtitle, int width, int height, bool resizable);
         virtual ~DrW_SDL2();
     private:
         SDL_Window* _window;
