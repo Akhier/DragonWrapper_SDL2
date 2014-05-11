@@ -2,7 +2,7 @@
 1399694610 source:c:\programming\dragonwrapper_sdl2\drw_sdl2.cpp
 	"drw_sdl2.h"
 
-1399703057 c:\programming\dragonwrapper_sdl2\drw_sdl2.h
+1399799991 c:\programming\dragonwrapper_sdl2\drw_sdl2.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -337,4 +337,7 @@
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
+
+1399800323 source:c:\programming\dragonwrapper_sdl2\libtest.cpp
+	"drw_sdl2.h"
 
