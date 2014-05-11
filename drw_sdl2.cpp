@@ -25,7 +25,7 @@ SDL_Texture* DrW_SDL2::_loadtexture(const std::string &file){
     return outputTexture;
 }
 
-SDL_Texture* DrW_SDL2::_rendertextastexture(const std::string &message){
+SDL_Texture* DrW_SDL2::_rendertextastexture(const std::string &message, SDL_Color color){
     if (_font == nullptr){
         return nullptr;
     }
