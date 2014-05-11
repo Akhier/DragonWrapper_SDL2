@@ -12,6 +12,7 @@ class DrW_SDL2
 {
     public:
         DrW_SDL2();
+        void createWindow(const std::string windowtitle, int x = -1, int y = -1, int width, int height, bool resizable);
         virtual ~DrW_SDL2();
     private:
         SDL_Window* _window;
@@ -21,6 +22,7 @@ class DrW_SDL2
         void _logerror (const std::string &message);
         SDL_Texture* _loadtexture (const std::string &file);
         SDL_Texture* _rendertextastexture (const std::string &message, SDL_Color color);
+        std::map<int, std::vector<SDL_Rect>> _tilesetdefinition;
 };
 
 #endif // DRW_SDL2_H

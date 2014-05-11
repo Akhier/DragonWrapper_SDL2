@@ -42,6 +42,17 @@ SDL_Texture* DrW_SDL2::_rendertextastexture(const std::string &message){
     return outputTexture;
 }
 
+void DrW_SDL2::createWindow(const std::string windowtitle, int x = -1, int y = -1, int width, int height, bool resizable);{
+    _window = SDL_CreateWindow(windowtitle.c_str(), x >= 0 ? x : SDL_WINDOWPOS_UNDEFINED, y >= 0 ? y : SDL_WINDOWPOS_UNDEFINED, width, height, resizable ? SDL_WINDOW_RESIZABLE : (SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE));
+    if (_window == nullptr){
+        _logerror("SDL_CreateWindow");
+    }
+    _renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    if (_renderer == nullptr){
+        _logerror("SDL_CreateRenderer");
+    }
+}
+
 DrW_SDL2::~DrW_SDL2()
 {
     //dtor
