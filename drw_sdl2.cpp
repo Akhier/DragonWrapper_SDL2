@@ -31,7 +31,7 @@ SDL_Texture* DrW_SDL2::_rendertextastexture(const std::string &message, SDL_Colo
     }
     SDL_Surface* tempSurface = TTF_RenderText_Blended(_font, message.c_str(), color);
     if (tempSurface == nullptr){
-        _logerror("TTF_RenderText_Blended")
+        _logerror("TTF_RenderText_Blended");
         return nullptr;
     }
     SDL_Texture* outputTexture = SDL_CreateTextureFromSurface(_renderer, tempSurface);
