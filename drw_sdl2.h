@@ -13,12 +13,14 @@ class DrW_SDL2
     public:
         DrW_SDL2();
         virtual ~DrW_SDL2();
-    protected:
     private:
         SDL_Window* _window;
         SDL_Renderer* _renderer;
         TTF_Font* _font;
         std::vector<SDL_Texture*> _textures;
+        void _logerror (const std::string &message);
+        SDL_Texture* _loadtexture (const std::string &file);
+        SDL_Texture* _rendertextastexture (const std::string &message, SDL_Color color);
 };
 
 #endif // DRW_SDL2_H
