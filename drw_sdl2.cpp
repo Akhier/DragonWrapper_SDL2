@@ -1,7 +1,6 @@
 #include "drw_sdl2.h"
 
-DrW_SDL2::DrW_SDL2()
-{
+DrW_SDL2::DrW_SDL2(){
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
        _logerror("SDL_Init");
     }
@@ -54,6 +53,12 @@ void DrW_SDL2::createWindow(const std::string windowtitle, int width, int height
 }
 
 DrW_SDL2::~DrW_SDL2(){
+    for (size_t iter = 0; iter < _textures.size(); ++iter){
+        SDL_DestroyTexture(_textures[iter]);
+    }
     SDL_DestroyRenderer(_renderer);
     SDL_DestroyWindow(_window);
+    IMG_Quit();
+    TTF_Quit();
+    SDL_Quit();
 }
