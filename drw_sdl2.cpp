@@ -89,6 +89,14 @@ void DrW_SDL2::renderTexture(const int textureid, Rect source, int x, int y){
     renderTexture(textureid, source, _gettexturesize(textureid, x, y));
 }
 
+void DrW_SDL2::renderclear(){
+    SDL_RenderClear(_renderer);
+}
+
+void DrW_SDL2::renderpresent(){
+    SDL_RenderPresent(_renderer);
+}
+
 DrW_SDL2::~DrW_SDL2(){
     for (size_t iter = 0; iter < _textures.size(); ++iter){
         SDL_DestroyTexture(_textures[iter]);

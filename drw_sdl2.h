@@ -21,6 +21,8 @@ class DrW_SDL2
         void renderTexture(const int textureid, int x, int y);
         void renderTexture(const int textureid, Rect source, Rect destination);
         void renderTexture(const int textureid, Rect source, int x, int y);
+        void renderclear();
+        void renderpresent();
         virtual ~DrW_SDL2();
     private:
         SDL_Window* _window;
