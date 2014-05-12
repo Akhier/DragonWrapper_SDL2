@@ -63,6 +63,32 @@ int DrW_SDL2::createTexture(const std::string &file){
     return _textures.size() - 1;
 }
 
+void DrW_SDL2::_rendertexture(const int textureid, const SDL_Rect* source, const SDL_Rect* destination){
+    SDL_RenderCopy(_renderer, _textures[textureid], source, destination);
+}
+
+Rect DrW_SDL2::_gettexturesize(const int textureid, int x, int y){
+    Rect output(x, y);
+    SDL_QueryTexture(_textures[textureid], NULL, NULL, &output.W, &output.H);
+    return output;
+}
+
+void DrW_SDL2::renderTexture(const int textureid, Rect destination){
+    _rendertexture(textureid, NULL, destination.getSDLRect());
+}
+
+void DrW_SDL2::renderTexture(const int textureid, int x, int y){
+    renderTexture(textureid, _gettexturesize(textureid, x, y));
+}
+
+void DrW_SDL2::renderTexture(const int textureid, Rect source, Rect destination){
+    _rendertexture(textureid, source.getSDLRect(), destination.getSDLRect());
+}
+
+void DrW_SDL2::renderTexture(const int textureid, Rect source, int x, int y){
+    renderTexture(textureid, source, _gettexturesize(textureid, x, y));
+}
+
 DrW_SDL2::~DrW_SDL2(){
     for (size_t iter = 0; iter < _textures.size(); ++iter){
         SDL_DestroyTexture(_textures[iter]);

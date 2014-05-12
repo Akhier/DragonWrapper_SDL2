@@ -14,11 +14,11 @@ Rect::Rect(int x, int y){
     H = -1;
 }
 
-SDL_Rect Rect::getSDLRect(){
-    SDL_Rect output;
-    output.x = X;
-    output.y = Y;
-    output.w = W;
-    output.h = H;
+SDL_Rect* Rect::getSDLRect(){
+    SDL_Rect* output = new SDL_Rect;
+    output->x = X;
+    output->y = Y;
+    output->w = W;
+    output->h = H;
     return output;
 }

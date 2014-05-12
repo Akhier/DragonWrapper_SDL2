@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include "drw_sdl2_rect.h"
 
 class DrW_SDL2
 {
@@ -16,6 +17,10 @@ class DrW_SDL2
         void createWindow(const std::string windowtitle, int width, int height, bool resizable);
         int createText(const std::string &message);
         int createTexture(const std::string &file);
+        void renderTexture(const int textureid, Rect destination);
+        void renderTexture(const int textureid, int x, int y);
+        void renderTexture(const int textureid, Rect source, Rect destination);
+        void renderTexture(const int textureid, Rect source, int x, int y);
         virtual ~DrW_SDL2();
     private:
         SDL_Window* _window;
@@ -26,6 +31,8 @@ class DrW_SDL2
         SDL_Texture* _loadtexture (const std::string &file);
         SDL_Texture* _rendertextastexture (const std::string &message, SDL_Color color);
         std::map<int, std::vector<SDL_Rect>> _tilesetdefinition;
+        void _rendertexture(const int textureid, const SDL_Rect* source, const SDL_Rect* destination);
+        Rect _gettexturesize(const int textureid, int x, int y);
 };
 
 #endif // DRW_SDL2_H
