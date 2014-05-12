@@ -114,6 +114,9 @@ DrW_SDL2::~DrW_SDL2(){
     for (size_t iter = 0; iter < _textures.size(); ++iter){
         SDL_DestroyTexture(_textures[iter]);
     }
+    if (_font != NULL){
+        TTF_CloseFont(_font);
+    }
     SDL_DestroyRenderer(_renderer);
     SDL_DestroyWindow(_window);
     IMG_Quit();
