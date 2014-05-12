@@ -32,9 +32,9 @@ class DrW_SDL2
         void _logerror (const std::string &message);
         SDL_Texture* _loadtexture (const std::string &file);
         SDL_Texture* _rendertextastexture (const std::string &message, SDL_Color color);
-        std::map<int, std::vector<SDL_Rect>> _tilesetdefinition;
         void _rendertexture(const int textureid, const SDL_Rect* source, const SDL_Rect* destination);
         Rect _gettexturesize(const int textureid, int x, int y);
+        std::map<int, std::vector<Rect>> _tilesetdefinition;
 };
 
 #endif // DRW_SDL2_H
