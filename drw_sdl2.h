@@ -5,8 +5,8 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 #include "drw_sdl2_rect.h"
 
 class DrW_SDL2
@@ -23,6 +23,8 @@ class DrW_SDL2
         void renderTexture(const int textureid, Rect source, int x, int y);
         void renderclear();
         void renderpresent();
+        int setupTileset(const int textureid, Rect source);
+        Rect getSourceRect (const int textureid, const int tileid);
         virtual ~DrW_SDL2();
     private:
         SDL_Window* _window;

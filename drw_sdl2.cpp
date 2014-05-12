@@ -97,6 +97,15 @@ void DrW_SDL2::renderpresent(){
     SDL_RenderPresent(_renderer);
 }
 
+int DrW_SDL2::setupTileset(const int textureid, Rect source){
+    _tilesetdefinition[textureid].push_back(source);
+    return _tilesetdefinition[textureid].size() - 1;
+}
+
+Rect DrW_SDL2::getSourceRect (const int textureid, const int tileid){
+    return _tilesetdefinition[textureid][tileid];
+}
+
 DrW_SDL2::~DrW_SDL2(){
     for (size_t iter = 0; iter < _textures.size(); ++iter){
         SDL_DestroyTexture(_textures[iter]);

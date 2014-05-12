@@ -45,6 +45,8 @@
 		</Linker>
 		<Unit filename="drw_sdl2.cpp" />
 		<Unit filename="drw_sdl2.h" />
+		<Unit filename="drw_sdl2_rect.cpp" />
+		<Unit filename="drw_sdl2_rect.h" />
 		<Unit filename="libtest.cpp">
 			<Option target="Debug" />
 		</Unit>
