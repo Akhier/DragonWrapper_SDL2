@@ -14,6 +14,8 @@ class DrW_SDL2
         DrW_SDL2();
         void createWindow(const std::string windowtitle, int x, int y, int width, int height, bool resizable);
         void createWindow(const std::string windowtitle, int width, int height, bool resizable);
+        int createText(const std::string &message);
+        int createTexture(const std::string &file);
         virtual ~DrW_SDL2();
     private:
         SDL_Window* _window;

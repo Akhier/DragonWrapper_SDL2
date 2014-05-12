@@ -52,6 +52,17 @@ void DrW_SDL2::createWindow(const std::string windowtitle, int width, int height
     createWindow(windowtitle, -1, -1, width, height, resizable);
 }
 
+int DrW_SDL2::createText(const std::string &message){
+    SDL_Color color = {0, 0, 0, 255};
+    _textures.push_back(_rendertext(message, color));
+    return _textures.size() - 1;
+}
+
+int DrW_SDL2::createTexture(const std::string &file){
+    _textures.push_back(_loadtexture(file, _renderer));
+    return _textures.size() - 1;
+}
+
 DrW_SDL2::~DrW_SDL2(){
     for (size_t iter = 0; iter < _textures.size(); ++iter){
         SDL_DestroyTexture(_textures[iter]);
