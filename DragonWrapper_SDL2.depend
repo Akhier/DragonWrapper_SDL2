@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1399888575 source:c:\programming\dragonwrapper_sdl2\drw_sdl2.cpp
+1399891624 source:c:\programming\dragonwrapper_sdl2\drw_sdl2.cpp
 	"drw_sdl2.h"
 
-1399888447 c:\programming\dragonwrapper_sdl2\drw_sdl2.h
+1399890432 c:\programming\dragonwrapper_sdl2\drw_sdl2.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -339,7 +339,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1399886422 source:c:\programming\dragonwrapper_sdl2\libtest.cpp
+1399891565 source:c:\programming\dragonwrapper_sdl2\libtest.cpp
 	"drw_sdl2.h"
 
 1399883969 source:c:\programming\dragonwrapper_sdl2\drw_sdl2_rect.cpp

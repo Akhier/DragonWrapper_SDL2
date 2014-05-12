@@ -14,6 +14,9 @@ int main(int argc, char **argv){
     sdl.renderTexture(test, sdl.getSourceRect(test, solidBlue), Rect(40, 40, 20, 20));
     sdl.renderTexture(test, sdl.getSourceRect(test, halfandhalf), Rect(40, 20, 20, 20));
     sdl.renderTexture(test, sdl.getSourceRect(test, halfandhalf), Rect(20, 40, 20, 20));
+    sdl.setFont("fonts/freeserif.ttf", 16);
+    int text = sdl.createText("test");
+    sdl.renderTexture(text, 20, 20);
     sdl.renderpresent();
     SDL_Delay(2000);
     return 0;

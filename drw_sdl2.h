@@ -25,11 +25,12 @@ class DrW_SDL2
         void renderpresent();
         int setupTileset(const int textureid, Rect source);
         Rect getSourceRect (const int textureid, const int tileid);
+        void setFont(const std::string &font, int fontsize);
         virtual ~DrW_SDL2();
     private:
         SDL_Window* _window;
         SDL_Renderer* _renderer;
-        TTF_Font* _font;
+        TTF_Font* _font = NULL;
         std::vector<SDL_Texture*> _textures;
         void _logerror (const std::string &message);
         SDL_Texture* _loadtexture (const std::string &file);

@@ -106,6 +106,10 @@ Rect DrW_SDL2::getSourceRect (const int textureid, const int tileid){
     return _tilesetdefinition[textureid][tileid];
 }
 
+void DrW_SDL2::setFont(const std::string &font, int fontsize){
+    _font = TTF_OpenFont(font.c_str(), fontsize);
+}
+
 DrW_SDL2::~DrW_SDL2(){
     for (size_t iter = 0; iter < _textures.size(); ++iter){
         SDL_DestroyTexture(_textures[iter]);
