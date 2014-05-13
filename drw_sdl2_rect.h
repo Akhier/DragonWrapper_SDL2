@@ -9,7 +9,7 @@ class Rect{
         Rect(int x, int y);
         int X, Y, W, H;
     private:
-        SDL_Rect* getSDLRect();
+        SDL_Rect* _getsdlrect();
     friend class DrW_SDL2;
 };
 

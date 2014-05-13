@@ -48,6 +48,7 @@ void DrW_SDL2::createWindow(const std::string windowtitle, int x, int y, int wid
         _logerror("SDL_CreateRenderer");
     }
 }
+
 void DrW_SDL2::createWindow(const std::string windowtitle, int width, int height, bool resizable){
     createWindow(windowtitle, -1, -1, width, height, resizable);
 }
@@ -74,7 +75,7 @@ Rect DrW_SDL2::_gettexturesize(const int textureid, int x, int y){
 }
 
 void DrW_SDL2::renderTexture(const int textureid, Rect destination){
-    _rendertexture(textureid, NULL, destination.getSDLRect());
+    _rendertexture(textureid, NULL, destination._getsdlrect());
 }
 
 void DrW_SDL2::renderTexture(const int textureid, int x, int y){
@@ -82,7 +83,7 @@ void DrW_SDL2::renderTexture(const int textureid, int x, int y){
 }
 
 void DrW_SDL2::renderTexture(const int textureid, Rect source, Rect destination){
-    _rendertexture(textureid, source.getSDLRect(), destination.getSDLRect());
+    _rendertexture(textureid, source._getsdlrect(), destination._getsdlrect());
 }
 
 void DrW_SDL2::renderTexture(const int textureid, Rect source, int x, int y){
